@@ -1,0 +1,9 @@
+/target/
+
+.settings/
+.classpath
+.project
+/test-output/
+chromedriver.exe
+*.rar
+*.7z

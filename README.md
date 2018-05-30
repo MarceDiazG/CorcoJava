@@ -21,6 +21,6 @@ http://docs.seleniumhq.org/download/
 
 ## Running the stories
 
-This will run the build and test website: https://streeteasy.com
+This will run the build and test website: https://corcoran.com
 
     mvn clean install

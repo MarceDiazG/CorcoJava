@@ -18,14 +18,14 @@ public class SignInAction {
 		AutomationHomePage.sign_in.click();
 		Log.info("Click action is performed on My Account link" );
 
-		LoginPage.email.sendKeys(map.get("username"));
+		LoginPage.input_email.sendKeys(map.get("username"));
 
 		Log.info(" is entered in UserName text box" );
-		
-		LoginPage.password.sendKeys(map.get("password"));
+
+		LoginPage.input_password.sendKeys(map.get("input_password"));
 		Log.info(" is entered in Password text box" );
 
-		LoginPage.signin_button.click();
+		LoginPage.sign_in_button.click();
 		Log.info("Click action is performed on Submit button");
 
 		Reporter.log("SignIn Action is successfully performed");

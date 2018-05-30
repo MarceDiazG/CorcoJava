@@ -28,7 +28,7 @@ public class BlankStepDefs {
     @Given("^I open (.*) webPage$")
     public void iOpenParamwebWebPage(String paramweb){
         sp= new SearchPage(driver);
-        //sp.loadSearchPage();
+        sp.loadSearchPage();
     }
 
     @When("^Search (.*), (.*) for a start value of (.*)$")
@@ -36,18 +36,21 @@ public class BlankStepDefs {
                                                String Custom, String Price) {
 
         Log.info("Values: " + Location+"/"+Custom+"/"+Price);
-        //sp.searchWithParameters(Location,Custom,Price);
+        sp.searchCorcoranWithParameters(Location,Custom,Price);
 
     }
 
     @Then("^I validate that first element showed is according to criteria (.*)$")
-    public void validateTitleURLAndShowDollarValue(String Price) throws Throwable {
-        String showedFirstValue = sp.readFirstValue(Price);
-        System.out.println("Checking values: "+parseInt(showedFirstValue)+">="+parseInt(Price));
+    public void validateFirstOptionValue(String Price) {
 
-        boolean result = (parseInt(showedFirstValue)>=(parseInt(Price)));
+        String showedFirstValue = sp.readFirstValue();
+
+        System.out.println("\nChecking values: "+parseInt(showedFirstValue)+" >= "+parseInt(Price)+"\n");
+
+        boolean result = parseInt(showedFirstValue) >= parseInt(Price);
         Assert.assertTrue(result);
-        Log.info("  - First showed value checked OK!");
+
+        Log.info("  - First showed value checked OK!\n");
     }
 
 }

@@ -8,4 +8,4 @@ Scenario Outline: Open StreetEasy WebPage and search real state
 
 Examples:
 | paramWeb      |Location |Custom|Price     |
-| StreetEasy    |Manhattan|Yes   |80,000,000|
+| StreetEasy    |Manhattan|Yes   |20000000  |
