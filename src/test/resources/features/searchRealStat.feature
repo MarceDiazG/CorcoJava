@@ -1,4 +1,4 @@
-Feature: Access streeteasy.com website & search a real state for sale
+Feature: Access corcoran.com website & search a real state for sale
          Using selenium java with cucumber
 
 Scenario Outline: Open StreetEasy WebPage and search real state
@@ -8,4 +8,4 @@ Scenario Outline: Open StreetEasy WebPage and search real state
 
 Examples:
 | paramWeb      |Location |Custom|Price     |
-| StreetEasy    |Manhattan|Yes   |20000000  |
+| Corcoran      |Manhattan|Yes   |20000000  |

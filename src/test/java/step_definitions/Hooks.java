@@ -40,7 +40,7 @@ public class Hooks {
         //System.setProperty("webdriver.opera.driver", "C:\\drivers\\operadriver.exe");
         //driver = new EdgeDriver(); //OperaDriver(); //ChromeDriver(); //
         driver.manage().deleteAllCookies();
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
     }
 
 

@@ -1,5 +1,6 @@
 package pageobjects;
 
+import helpers.Log;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -49,11 +50,11 @@ public class SearchPage extends BaseClass {
     try {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(LINK_SELECT_LOCATION));
-        System.out.println("Link 'Select Location' located successfully ! ");
+        Log.info("Link 'Select Location' located successfully ! ");
         return true;
 
     } catch (NoSuchElementException e) {
-        System.out.println("Error loading Search Page!" + e.getMessage());
+        Log.error("Error loading Search Page!" + e.getMessage());
         return false;
     }
 }
@@ -62,24 +63,22 @@ public class SearchPage extends BaseClass {
         try {
             WebElement linkSelectLocation = driver.findElement(LINK_SELECT_LOCATION);
             linkSelectLocation.click();
-            waitSeconds(1);
+
 
             WebElement allInManhattanLink = driver.findElement(INPUT_OPTION_MANHATTAN);
-            //allInManhattanLink.click();
 
             selectPriceInSlider(Price);
-            waitSeconds(2);
 
             WebElement buttonSearch = driver.findElement(BUTTON_SEARCH);
             buttonSearch.click();
 
             wait.until(ExpectedConditions.visibilityOfElementLocated(DIV_SEARCH_RESULTS));
 
-            System.out.println("Parameters selected OK");
+            Log.info("Parameters selected OK");
             return true;
 
         } catch (NoSuchElementException e) {
-            System.out.println("Error searching components of Search Page!\n" + e.getMessage());
+            Log.error("Error searching components of Search Page!\n" + e.getMessage());
             return false;
         }
     }
@@ -103,7 +102,7 @@ public class SearchPage extends BaseClass {
             WebElement labelAddressSearch = driver.findElement(LABEL_ADDRESS_SEARCH);
             labelAddressSearch.click();
             selectPriceInForm(Custom,Price);
-            System.out.println("Parameters selected OK\n");
+            Log.info("Parameters selected OK\n");
 
             WebElement buttonCheckout = driver.findElement(BUTTON_SEARCH);
             buttonCheckout.click();
@@ -112,7 +111,7 @@ public class SearchPage extends BaseClass {
             return true;
 
         } catch (NoSuchElementException e) {
-            System.out.println("Error searching component of Search Page!\n" + e.getMessage());
+            Log.error("Error searching component of Search Page!\n" + e.getMessage());
             return false;
         }
     }
@@ -158,7 +157,7 @@ public class SearchPage extends BaseClass {
      */
     private void selectPriceInForm(String Custom, String Price) {
         WebElement mySelect = driver.findElement(SELECT_PRICE);
-        System.out.println(">> Select Price found OK!, let's continue....\n");
+        Log.info(">> Select Price found OK!, let's continue....\n");
         mySelect.click();
 
         if (Custom.compareToIgnoreCase("Yes")==0){

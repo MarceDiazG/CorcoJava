@@ -45,7 +45,7 @@ public class BlankStepDefs {
 
         String showedFirstValue = sp.readFirstValue();
 
-        System.out.println("\nChecking values: "+parseInt(showedFirstValue)+" >= "+parseInt(Price)+"\n");
+        Log.info("\nChecking values: "+parseInt(showedFirstValue)+" >= "+parseInt(Price)+"\n");
 
         boolean result = parseInt(showedFirstValue) >= parseInt(Price);
         Assert.assertTrue(result);
